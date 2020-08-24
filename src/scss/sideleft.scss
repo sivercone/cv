@@ -1,0 +1,49 @@
+@import 'variables';
+
+.sideleft {
+   background: linear-gradient(to top, $blue, $aqua);
+   text-align: center;
+
+   &--content {
+      padding: 50px;
+   }
+
+   &--title {
+      margin-bottom: 100px;
+   }
+}
+
+.sideleft--files {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   margin: 10px auto;
+   width: 100px;
+   height: 100px;
+
+   &:hover {
+      border: 1px solid rgba(33, 128, 165, 0.8);
+      background-color: rgba(52, 135, 168, 0.6);
+      cursor: pointer;
+   }
+
+   &:active {
+      transform: scale(1.02);
+   }
+
+   // &--content {
+   // }
+
+   & img {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+   }
+
+   &--name {
+      color: inherit;
+      text-align: center;
+      font-size: 15px;
+   }
+}
