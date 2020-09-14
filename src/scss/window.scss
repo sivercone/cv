@@ -1,8 +1,7 @@
 .window {
    position: absolute;
-   display: grid;
-   grid-template-rows: 35px 450px;
    width: 800px;
+   height: 450px;
    top: 30%;
    left: 30%;
 
@@ -12,9 +11,12 @@
 }
 
 .window_top {
+   z-index: 100;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   height: 35px;
+   width: 100%;
    padding: 0 15px;
 
    font-size: 15px;
@@ -41,8 +43,10 @@
    }
 
    &__name {
-      width: 150px;
+      width: auto;
+      height: 35px;
       display: flex;
+      align-items: center;
 
       label {
          margin-left: 10px;
@@ -53,6 +57,10 @@
 .window_bottom {
    display: flex;
    padding: 20px;
+
+   svg {
+      margin: 0 auto;
+   }
 
    &__file {
       margin: 20px;
@@ -86,10 +94,10 @@
       top: 3%;
       left: 0;
       width: 100%;
-      grid-template-rows: 82vh;
+      height: 82%;
       border-radius: 0;
       box-shadow: none;
-      background-color: #d9dadfb0;
+      background-color: #d9dadfec;
 
       &_top {
          display: none;

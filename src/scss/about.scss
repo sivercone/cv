@@ -1,8 +1,7 @@
 .about {
    position: absolute;
-   display: grid;
-   grid-template-rows: 35px 550px;
    width: 650px;
+   height: 550px;
    top: 25%;
    left: 35%;
 
@@ -18,10 +17,6 @@
    }
 }
 
-.--about {
-   width: 650px;
-}
-
 @media (max-width: 1024px) {
    .about {
       top: 20%;
@@ -31,13 +26,13 @@
 
 @media (max-width: 768px) {
    .about {
-      grid-template-rows: 82vh;
       width: 100%;
+      height: 82%;
       left: 0;
       top: 3%;
       border-radius: 0;
       box-shadow: none;
-      background-color: #d9dadfb0;
+      background-color: #d9dadfec;
 
       &__content {
          padding: 25px;
