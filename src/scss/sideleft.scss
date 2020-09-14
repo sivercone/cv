@@ -1,19 +1,19 @@
-@import 'variables';
-
 .sideleft {
-   background: linear-gradient(to top, $blue, $aqua);
+   width: 15%;
+
+   background: no-repeat linear-gradient(to top, #579af280, #e66aff80);
    text-align: center;
 
-   &--content {
+   &__content {
       padding: 50px;
    }
 
-   &--title {
+   &__title {
       margin-bottom: 100px;
    }
 }
 
-.sideleft--files {
+.sideleft__files {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -32,18 +32,84 @@
       transform: scale(1.02);
    }
 
-   // &--content {
-   // }
-
    & img {
       width: 50px;
       height: 50px;
       margin: 0 auto;
    }
 
-   &--name {
+   &__name {
       color: inherit;
       text-align: center;
       font-size: 15px;
+   }
+}
+
+@media (max-width: 1024px) {
+   .sideleft {
+      &__content {
+         padding: 50px 0;
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .sideleft {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15vh;
+      background-color: #6eff00;
+
+      &__title {
+         display: none;
+      }
+
+      &__content {
+         display: flex;
+         justify-content: space-between;
+         padding: 15px 50px;
+         align-items: center;
+         height: 100%;
+      }
+
+      &__files {
+         &__name {
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+@media (max-width: 575px) {
+   .sideleft {
+      &__files {
+         width: 75px;
+         height: 75px;
+         margin: 0;
+
+         &__name {
+            font-size: 14px;
+         }
+
+         svg {
+            width: 30px;
+            height: 30px;
+         }
+      }
+   }
+}
+
+@media (max-width: 385px) {
+   .sideleft {
+      &__content {
+         padding: 0 20px;
+         height: 100%;
+      }
+
+      &__files {
+         margin: 5px 0;
+      }
    }
 }

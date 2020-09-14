@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap');
+
 @import 'sideleft';
 @import 'sideright';
-@import 'variables';
+@import 'window';
+@import 'header';
+@import 'about';
 
 body {
    margin: 0;
 
    color: #111;
+   background: linear-gradient(120deg, #fff06e, #ada0ff);
 
-   font-family: monospace;
+   font-family: 'Roboto Mono', monospace;
    font-size: 25px;
 }
 
@@ -18,23 +23,65 @@ body {
 }
 
 .container {
-   display: grid;
-   grid-template-columns: minmax(450px, 25%) 1fr;
+   display: flex;
 
-   height: 100vh;
+   height: 97vh;
 }
 
 .itsNotReady {
-   z-index: 999;
+   z-index: 100;
    top: 91%;
    left: 12%;
    position: absolute;
-   width: 400px;
+   width: 300px;
 
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: 20px;
+   font-family: arial;
+   font-size: 15px;
    text-align: center;
-   letter-spacing: 5px;
-   background-color: darken($blue, $amount: 2);
+   letter-spacing: 2px;
+   color: #f3f3f3;
+   background-color: #111;
    user-select: none;
+   opacity: 0.9;
+}
+
+.rotate {
+   display: none;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 50px;
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 500;
+
+   background: linear-gradient(120deg, #111, #1a1919);
+
+   h1 {
+      text-align: center;
+      font-size: 25px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: #fff;
+   }
+}
+
+@media (max-width: 768px) {
+   .itsNotReady {
+      display: none;
+   }
+}
+
+@media (max-width: 575px), screen and (max-height: 575px) {
+   .rotate {
+      display: flex;
+   }
+}
+
+@media (max-width: 575px), screen and (orientation: portrait) {
+   .rotate {
+      display: none;
+   }
 }

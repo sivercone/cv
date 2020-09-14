@@ -1,0 +1,106 @@
+.window {
+   position: absolute;
+   display: grid;
+   grid-template-rows: 35px 450px;
+   width: 800px;
+   top: 30%;
+   left: 30%;
+
+   border-radius: 5px;
+   background-color: #d9dadf;
+   box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.05);
+}
+
+.window_top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 15px;
+
+   font-size: 15px;
+   border-radius: 5px 5px 0 0;
+   background-color: darken($color: #d9dadf, $amount: 10);
+
+   &__draggable {
+      position: static;
+      width: 100%;
+      text-align: center;
+      color: transparent;
+      user-select: none;
+      cursor: grab;
+
+      &:active {
+         cursor: grabbing;
+      }
+   }
+
+   &__close {
+      width: 10px;
+      cursor: pointer;
+      text-align: center;
+   }
+
+   &__name {
+      width: 150px;
+      display: flex;
+
+      label {
+         margin-left: 10px;
+      }
+   }
+}
+
+.window_bottom {
+   display: flex;
+   padding: 20px;
+
+   &__file {
+      margin: 20px;
+      width: 100px;
+      height: 100px;
+   }
+
+   &__image {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+   }
+
+   &__txt {
+      font-size: 15px;
+      text-align: center;
+   }
+}
+
+@media (max-width: 1024px) {
+   .window {
+      width: 70%;
+      top: 20%;
+      left: 20%;
+   }
+}
+
+@media (max-width: 768px) {
+   .window {
+      top: 3%;
+      left: 0;
+      width: 100%;
+      grid-template-rows: 82vh;
+      border-radius: 0;
+      box-shadow: none;
+      background-color: #d9dadfb0;
+
+      &_top {
+         display: none;
+      }
+   }
+}
+
+@media (max-width: 385px) {
+   .window {
+      &_bottom {
+         padding: 0;
+      }
+   }
+}
