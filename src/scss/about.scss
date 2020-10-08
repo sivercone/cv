@@ -1,13 +1,8 @@
 .about {
-   position: absolute;
    width: 650px;
    height: 550px;
    top: 25%;
    left: 35%;
-
-   border-radius: 5px;
-   background-color: #d9dadf;
-   box-shadow: 10px 10px 1px #0000000d;
 
    font-size: 20px;
 
@@ -26,6 +21,7 @@
 
 @media (max-width: 768px) {
    .about {
+      animation: none;
       width: 100%;
       height: 82%;
       left: 0;

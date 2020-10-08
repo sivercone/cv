@@ -3,35 +3,49 @@ import React from 'react';
 import { Header, Left, Projects, About, Rotate } from './components/index';
 
 function App() {
-   const [isProjects, setIsProjects] = React.useState(false);
-   const [isAbout, setIsAbout] = React.useState(false);
+   const [visible, setVisible] = React.useState();
 
-   const toggleProjects = () => {
-      setIsProjects(!isProjects);
-      setIsAbout(false);
+   const onClickProjects = () => {
+      setVisible('Projects');
    };
-   const toggleAbout = () => {
-      setIsAbout(!isAbout);
-      setIsProjects(false);
+   const onClickAbout = () => {
+      setVisible('About');
    };
+   const onClickClose = () => {
+      setVisible(undefined);
+   };
+
+   ///////////////////////////////////////////////////////////////////
+   // TO DO
+   // 1. Изменить названия CSS на БЭМ
+   // 2. Исправить верстку отображения файлов по центру в Папках
+   // 3. Отрефакторить код, по необходимости
+   ///////////////////////////////////////////////////////////////////
 
    return (
       <>
          <Rotate />
          <Header />
          <div className="container">
-            <Left toggleProjectsFromApp={toggleProjects} toggleAboutFromApp={toggleAbout} />
+            <Left
+               toggleProjects={visible === 'Projects' ? onClickClose : onClickProjects}
+               toggleAbout={visible === 'About' ? onClickClose : onClickAbout}
+            />
 
-            <div className="sideright">
-               <div className="sideright__content">
-                  <div className="sideright__title">opened file</div>
-               </div>
-
-               {isProjects ? <Projects toggleFromRight={toggleProjects} /> : false}
-               {isAbout ? <About toggleFromRight={toggleAbout} /> : false}
+            <div className="right">
+               <h1>opened file</h1>
+               {visible === 'Projects' ? (
+                  <Projects onClose={onClickClose} />
+               ) : visible === 'About' ? (
+                  <About onClose={onClickClose} />
+               ) : (
+                  <></>
+               )}
             </div>
 
-            <div className="itsNotReady">this is under construction</div>
+            <div className="itsNotReady">
+               <span>this is under construction</span>
+            </div>
          </div>
       </>
    );
