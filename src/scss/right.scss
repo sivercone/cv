@@ -81,8 +81,8 @@
 @media (max-width: 768px) {
    .right {
       width: 100%;
-      height: 85%;
-      padding: 0;
+      height: 75%;
+      padding: 5%;
 
       h1 {
          display: none;
@@ -91,18 +91,32 @@
 
    .folder {
       &__top {
-         display: none;
+         &__draggable {
+            display: none;
+         }
       }
 
       &__bottom {
          flex-wrap: wrap;
          justify-content: space-between;
          padding: 20px;
+
+         &__image {
+            height: 35px;
+         }
       }
    }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 575px) {
+   .folder {
+      &__bottom {
+         padding: 5px;
+      }
+   }
+}
+
+@media (max-width: 330px) {
    .folder {
       &__bottom {
          flex-direction: column;
