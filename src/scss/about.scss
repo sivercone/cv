@@ -1,5 +1,5 @@
 .about {
-   width: 650px;
+   width: 700px;
    height: 550px;
    top: 25%;
    left: 35%;
@@ -37,7 +37,7 @@
 @media (max-width: 385px) {
    .about {
       &__content {
-         font-size: 13px;
+         font-size: 12px;
       }
    }
 }
